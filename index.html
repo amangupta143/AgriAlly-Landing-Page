@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.svg"/>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.svg"/>
+    <title>AgriAlly - Empowering Farmers Through Technology</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center logo-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="50" height="50" class="mr-3">
+                    <circle cx="50" cy="50" r="40" fill="#10B981"/>
+                    <path d="M30 50 Q50 30, 70 50 T110 50" stroke="white" stroke-width="5" fill="none"/>
+                </svg>
+                <span class="text-2xl font-bold text-green-600">AgriAlly</span>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#features" class="text-green-600 hover:text-green-800 transition">Features</a>
+                <a href="#technology" class="text-green-600 hover:text-green-800 transition">Technology</a>
+                <a href="#impact" class="text-green-600 hover:text-green-800 transition">Impact</a>
+                <a href="#testimonials" class="text-green-600 hover:text-green-800 transition">Testimonials</a>
+                <button class="btn-primary px-4 py-2 rounded-full hover:shadow-lg transition">Get Started</button>
+                <button id="darkModeToggle" class="text-green-600 hover:text-green-800">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button id="darkModeToggleMobile" class="text-green-600 hover:text-green-800 mr-4">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu absolute w-full bg-white shadow-lg rounded-b-lg hidden md:hidden" id="mobileMenu">
+            <div class="container mx-auto px-4 py-2">
+                <a href="#features" class="flex items-center text-green-600 hover:text-green-800 transition py-3 border-b border-gray-100">
+                    <i class="fas fa-cube mr-3"></i>
+                    <span>Features</span>
+                </a>
+                <a href="#technology" class="flex items-center text-green-600 hover:text-green-800 transition py-3 border-b border-gray-100">
+                    <i class="fas fa-microchip mr-3"></i>
+                    <span>Technology</span>
+                </a>
+                <a href="#impact" class="flex items-center text-green-600 hover:text-green-800 transition py-3 border-b border-gray-100">
+                    <i class="fas fa-chart-line mr-3"></i>
+                    <span>Impact</span>
+                </a>
+                <a href="#testimonials" class="flex items-center text-green-600 hover:text-green-800 transition py-3 border-b border-gray-100">
+                    <i class="fas fa-quote-right mr-3"></i>
+                    <span>Testimonials</span>
+                </a>
+                <button class="btn-primary w-full px-4 py-3 rounded-full hover:shadow-lg transition mt-4">
+                    <i class="fas fa-seedling mr-2"></i>
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-hero text-white pt-32 pb-24 relative">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 animate__animated animate__fadeInDown">Transforming Agriculture, Empowering Farmers</h1>
+            <p class="text-xl max-w-2xl mx-auto mb-10 animate__animated animate__fadeInUp animate__delay-1s">AI-powered agricultural advisory bringing cutting-edge technology to the fingertips of small farmers across India.</p>
+            <div class="space-x-4 animate__animated animate__fadeInUp animate__delay-2s">
+                <button class="bg-white text-green-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 hover:shadow-lg transition">Learn More</button>
+                <button class="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-green-600 transition">Download App</button>
+            </div>
+            <div class="absolute animated-arrow left-1/2 transform -translate-x-1/2 scroll-down animate__animated animate__fadeInUp animate__delay-3s">
+                <a href="#features" class="text-white">
+                    <i data-feather="chevron-down" class="w-8 h-8"></i>
+                </a>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" transform="scale(-1, -1)" transform-origin="center">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="fill-current text-gray-50"></path>
+            </svg>
+            
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-gray-50 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-green-700 reveal-element">Key Features</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 reveal-element">
+                <!-- Feature Cards -->
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="feature-icon mb-6 p-4 rounded-full inline-block text-green-600">
+                        <i data-feather="cloud-rain" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Monsoon Prediction</h3>
+                    <p class="text-gray-600">Analyze 10-year rainfall patterns to provide precise sowing date recommendations.</p>
+                </div>
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="feature-icon mb-6 p-4 rounded-full inline-block text-green-600">
+                        <i data-feather="camera" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Disease Detection</h3>
+                    <p class="text-gray-600">Use AI and smartphone cameras to diagnose crop diseases instantly.</p>
+                </div>
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="feature-icon mb-6 p-4 rounded-full inline-block text-green-600">
+                        <i data-feather="globe" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Multilingual Support</h3>
+                    <p class="text-gray-600">Provide advisories in local languages for improved accessibility.</p>
+                </div>
+                <div class="feature-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="feature-icon mb-6 p-4 rounded-full inline-block text-green-600">
+                        <i data-feather="bell" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Real-Time Alerts</h3>
+                    <p class="text-gray-600">Instant notifications about weather, market prices, and crop management.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Elements -->
+        <div class="absolute -right-20 top-10 w-64 h-64 bg-green-200 rounded-full opacity-10 z-0"></div>
+        <div class="absolute -left-10 bottom-10 w-32 h-32 bg-green-300 rounded-full opacity-10 z-0"></div>
+    </section>
+
+    <!-- Technology Stack Section -->
+    <section id="technology" class="py-24 bg-gray-100 relative overflow-hidden">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-16 text-green-800 reveal-element">Our Technology Stack</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 reveal-element">
+                <div class="technology-item p-6 bg-white rounded-xl shadow-sm">
+                    <div class="mb-4 text-center">
+                        <i data-feather="map" class="w-16 h-16 mx-auto text-green-500"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Google Earth Engine</h3>
+                    <p class="text-gray-600 text-sm">Satellite imagery analysis for crop monitoring</p>
+                </div>
+                <div class="technology-item p-6 bg-white rounded-xl shadow-sm">
+                    <div class="mb-4 text-center">
+                        <i data-feather="cpu" class="w-16 h-16 mx-auto text-green-500"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">TensorFlow Lite</h3>
+                    <p class="text-gray-600 text-sm">On-device machine learning for disease detection</p>
+                </div>
+                <div class="technology-item p-6 bg-white rounded-xl shadow-sm">
+                    <div class="mb-4 text-center">
+                        <i data-feather="message-circle" class="w-16 h-16 mx-auto text-green-500"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">AI Translation</h3>
+                    <p class="text-gray-600 text-sm">Real-time language translation for local dialects</p>
+                </div>
+                <div class="technology-item p-6 bg-white rounded-xl shadow-sm">
+                    <div class="mb-4 text-center">
+                        <i data-feather="activity" class="w-16 h-16 mx-auto text-green-500"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Machine Learning</h3>
+                    <p class="text-gray-600 text-sm">Predictive analytics for yield optimization</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Elements -->
+        <div class="absolute left-1/4 top-1/4 w-64 h-64 bg-green-200 rounded-full opacity-10 z-0"></div>
+        <div class="absolute right-1/4 bottom-1/4 w-48 h-48 bg-green-300 rounded-full opacity-10 z-0"></div>
+    </section>
+
+    <!-- Problem & Solution Section -->
+    <section id="impact" class="py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal-element">
+                    <h2 class="text-4xl font-bold mb-8 text-green-800">The Agricultural Challenge</h2>
+                    <p class="text-lg mb-6 text-gray-600">In India, 85% of farmers lack access to real-time agricultural intelligence. Small landholders struggle with:</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i data-feather="alert-circle" class="w-5 h-5 text-red-500"></i>
+                            </div>
+                            <p class="ml-4 text-gray-700">Limited access to weather forecasts</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i data-feather="alert-circle" class="w-5 h-5 text-red-500"></i>
+                            </div>
+                            <p class="ml-4 text-gray-700">Inadequate crop disease management</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i data-feather="alert-circle" class="w-5 h-5 text-red-500"></i>
+                            </div>
+                            <p class="ml-4 text-gray-700">Complex market price fluctuations</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i data-feather="alert-circle" class="w-5 h-5 text-red-500"></i>
+                            </div>
+                            <p class="ml-4 text-gray-700">Language and digital literacy barriers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal-element">
+                    <h2 class="text-4xl font-bold mb-8 text-green-800">Our Innovative Solution</h2>
+                    <p class="text-lg mb-6 text-gray-600">AgriAlly bridges the tech divide for farmers with AI advisories, disease detection, and support by providing:</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i data-feather="check-circle" class="w-5 h-5 text-green-500"></i>
+                            </div>
+                            <p class="ml-4 text-gray-700">Hyperlocal, AI-powered crop advisories</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i data-feather="check-circle" class="w-5 h-5 text-green-500"></i>
+                            </div>
+                            <p class="ml-4 text-gray-700">Smartphone-based disease detection</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i data-feather="check-circle" class="w-5 h-5 text-green-500"></i>
+                            </div>
+                            <p class="ml-4 text-gray-700">Multilingual voice and text support</p>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i data-feather="check-circle" class="w-5 h-5 text-green-500"></i>
+                            </div>
+                            <p class="ml-4 text-gray-700">Real-time market and weather insights</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <!-- <div class="absolute bottom-0 left-0 w-full overflow-hidden" style="height: 80px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style="height: 80px; width: 100%;">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="#EFF6FF" opacity="0.5"></path>
+            </svg>
+        </div> -->
+    </section>
+
+    <!-- SDG Impact Section -->
+    <section class="bg-green-100 py-24 relative overflow-hidden">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-16 text-green-800 reveal-element">Our Impact on Sustainable Development</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto reveal-element">
+                <div class="bg-white p-8 rounded-xl shadow-md transform transition-transform hover:scale-105">
+                    <div class="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="activity" class="w-10 h-10 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Zero Hunger (SDG 2)</h3>
+                    <p class="text-gray-600">Improving agricultural productivity and food security for small farmers through data-driven insights and sustainable farming practices.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md transform transition-transform hover:scale-105">
+                    <div class="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="zap" class="w-10 h-10 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Industry & Innovation (SDG 9)</h3>
+                    <p class="text-gray-600">Leveraging cutting-edge technology to transform agricultural practices, bringing innovation to rural communities, and bridging the digital divide.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Elements -->
+        <div class="absolute -left-16 -bottom-16 w-64 h-64 bg-green-200 rounded-full opacity-20 z-0"></div>
+        <div class="absolute right-10 top-10 w-32 h-32 bg-green-300 rounded-full opacity-20 z-0"></div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-gray-50 relative overflow-hidden">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-16 text-green-800 reveal-element">What Farmers Are Saying</h2>
+            <div class="grid md:grid-cols-3 gap-8 reveal-element">
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="mb-6">
+                        <svg class="h-10 w-10 text-green-500 mb-2" fill="currentColor" viewBox="0 0 32 32">
+                            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16 0c-4.896 3.456-8.352 9.12-8.352 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.352 4z" />
+                        </svg>
+                        <p class="text-gray-600 mb-4">AgriAlly has completely transformed my farming approach. The crop disease detection saved my entire tomato harvest last season!</p>
+                        <div class="flex items-center justify-center">
+                            <img src="https://i.pravatar.cc/150?img=32" alt="Farmer" class="w-12 h-12 rounded-full">
+                            <div class="ml-4 text-left">
+                                <h4 class="font-semibold">Rajesh Patel</h4>
+                                <p class="text-sm text-gray-500">Gujarat, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="mb-6">
+                        <svg class="h-10 w-10 text-green-500 mb-2" fill="currentColor" viewBox="0 0 32 32">
+                            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16 0c-4.896 3.456-8.352 9.12-8.352 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.352 4z" />
+                        </svg>
+                        <p class="text-gray-600 mb-4">Being able to receive farming advice in my native language has made all the difference. I've increased my yield by 40% this year!</p>
+                        <div class="flex items-center justify-center">
+                            <img src="https://i.pravatar.cc/150?img=44" alt="Farmer" class="w-12 h-12 rounded-full">
+                            <div class="ml-4 text-left">
+                                <h4 class="font-semibold">Lakshmi Devi</h4>
+                                <p class="text-sm text-gray-500">Tamil Nadu, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white p-8 rounded-lg shadow-md">
+                    <div class="mb-6">
+                        <svg class="h-10 w-10 text-green-500 mb-2" fill="currentColor" viewBox="0 0 32 32">
+                            <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16 0c-4.896 3.456-8.352 9.12-8.352 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.352 4z" />
+                        </svg>
+                        <p class="text-gray-600 mb-4">The real-time market price alerts helped me get 30% better prices for my produce. This app is a game-changer for small farmers like me.</p>
+                        <div class="flex items-center justify-center">
+                            <img src="https://i.pravatar.cc/150?img=67" alt="Farmer" class="w-12 h-12 rounded-full">
+                            <div class="ml-4 text-left">
+                                <h4 class="font-semibold">Maninder Singh</h4>
+                                <p class="text-sm text-gray-500">Punjab, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Elements -->
+        <div class="absolute right-0 top-1/2 w-32 h-32 bg-green-200 rounded-full opacity-30 z-0"></div>
+        <div class="absolute left-10 bottom-20 w-24 h-24 bg-green-300 rounded-full opacity-30 z-0"></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16 text-green-700 reveal-element">Our Impact in Numbers</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center reveal-element">
+                <div class="p-6">
+                    <div class="text-5xl font-bold text-green-600 mb-2">100K+</div>
+                    <p class="text-gray-600">Farmers Reached</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-5xl font-bold text-green-600 mb-2">35%</div>
+                    <p class="text-gray-600">Average Yield Increase</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-5xl font-bold text-green-600 mb-2">12</div>
+                    <p class="text-gray-600">Local Languages</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-5xl font-bold text-green-600 mb-2">8+</div>
+                    <p class="text-gray-600">Indian States</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-24 bg-green-600 text-white relative overflow-hidden">
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Farming?</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto">Join thousands of farmers who are already using AgriAlly to increase yields, reduce costs, and farm more sustainably.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <button class="bg-white text-green-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 hover:shadow-lg transition">Download App</button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-green-600 transition">Partner With Us</button>
+            </div>
+        </div>
+        
+        <!-- Background Elements -->
+        <div class="absolute right-0 bottom-0 w-64 h-64 bg-green-500 rounded-full opacity-30 z-0"></div>
+        <div class="absolute left-10 top-10 w-48 h-48 bg-green-500 rounded-full opacity-30 z-0"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-16">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40" class="mr-3">
+                            <circle cx="50" cy="50" r="40" fill="#10B981"/>
+                            <path d="M30 50 Q50 30, 70 50 T110 50" stroke="white" stroke-width="5" fill="none"/>
+                        </svg>
+                        <span class="text-2xl font-bold text-green-400">AgriAlly</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Empowering farmers through technology, one crop at a time.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition">Features</a></li>
+                        <li><a href="#technology" class="text-gray-400 hover:text-white transition">Technology</a></li>
+                        <li><a href="#impact" class="text-gray-400 hover:text-white transition">Impact</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Support</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Community</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="w-5 h-5 text-green-400 mr-3 mt-1"></i>
+                            <span class="text-gray-400">123 Agri Lane, Bangalore, India</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="mail" class="w-5 h-5 text-green-400 mr-3 mt-1"></i>
+                            <span class="text-gray-400">contact@agrially.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="phone" class="w-5 h-5 text-green-400 mr-3 mt-1"></i>
+                            <span class="text-gray-400">+91 9876543210</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-500">
+                <p>&copy; 2025 AgriAlly. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
